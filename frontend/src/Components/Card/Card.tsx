@@ -1,24 +1,26 @@
-import React, { JSX } from 'react'
+import React, { JSX } from "react";
 import "./Card.css";
+import { CompanySearch } from "../../company";
 
 interface Props {
-  companyName: string;
-  ticker: string;
-  price: number;
+  id: string;
+  searchResult: CompanySearch;
 }
 
-const Card: React.FC<Props> = ({companyName, ticker, price}: Props) : JSX.Element  => {
+const Card: React.FC<Props> = ({ id, searchResult }: Props): JSX.Element => {
   return (
-    <div className = "card">
-     <div className='details'>
-       <h2>{companyName} ({ticker})</h2>
-       <p>{price}</p>
-     </div>
-     <p className='info'>
-       blalala dakdakdakdadawkdladasldmldmakmsdmakdmad,sdmawk
-     </p>
+    <div key={id} id={id} className="card">
+      <div className="details">
+        <h2>
+          {searchResult.name} ({searchResult.symbol})
+        </h2>
+        <p>{searchResult.currency}</p>
+      </div>
+      <p className="info">
+        {searchResult.exchangeShortName} - {searchResult.stockExchange}
+      </p>
     </div>
   );
 };
 
-export default Card
+export default Card;
