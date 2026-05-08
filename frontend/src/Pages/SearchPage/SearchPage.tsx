@@ -1,5 +1,5 @@
 import React, { useState, ChangeEvent, SyntheticEvent } from "react";
-import Navbar from "../../Components/Navbar/Navbar";
+import Navbar from "../../Components/Navbar/NavBar";
 import { CompanySearch } from "../../company";
 import { searchCompanies } from "../../api";
 import Search from "../../Components/Search/Search";
@@ -62,7 +62,6 @@ const SearchPage = (props: Props) => {
         searchResults={searchResult}
         onPortfolioCreate={onPortfolioCreate}
       />
-
       {serverError && <div>Unable to connect to API</div>}
     </>
   );
