@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\api"
+    "\\api",
+    "\\api\\Repository"
   ],
-  "SelectedNode": "\\api\\appsettings.json",
+  "SelectedNode": "\\api\\Dtos",
   "PreviewInSolutionExplorer": false
 }
