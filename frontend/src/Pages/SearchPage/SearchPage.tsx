@@ -1,5 +1,5 @@
 import React, { useState, ChangeEvent, SyntheticEvent } from "react";
-import Navbar from "../../Components/Navbar/NavBar";
+import Navbar from "../../Components/Navbar/Navbar";
 import { CompanySearch } from "../../company";
 import { searchCompanies } from "../../api";
 import Search from "../../Components/Search/Search";
