@@ -1,0 +1,26 @@
+@{
+    ViewData["Title"] = "Menu principal";
+}
+
+<section class="page-title">
+    <div>
+        <p class="text-uppercase text-info fw-semibold mb-1">Sistema de Biblioteca</p>
+        <h1>Menu principal</h1>
+    </div>
+    <a class="btn btn-primary" asp-controller="Emprestimos" asp-action="Create">Novo empréstimo</a>
+</section>
+
+<div class="dashboard-grid">
+    <div class="metric"><span>Usuários</span><strong>@ViewBag.TotalUsuarios</strong></div>
+    <div class="metric"><span>Livros cadastrados</span><strong>@ViewBag.TotalLivros</strong></div>
+    <div class="metric"><span>Unidades disponíveis</span><strong>@ViewBag.Disponiveis</strong></div>
+    <div class="metric"><span>Emprestados</span><strong>@ViewBag.Emprestados</strong></div>
+    <div class="metric warning"><span>Atrasados</span><strong>@ViewBag.Atrasados</strong></div>
+</div>
+
+<div class="action-grid mt-4">
+    <a asp-controller="Usuarios" asp-action="Create">Cadastrar usuário</a>
+    <a asp-controller="Livros" asp-action="Create">Cadastrar livro</a>
+    <a asp-controller="Livros" asp-action="Index" asp-route-somenteDisponiveis="true">Livros disponíveis</a>
+    <a asp-controller="Emprestimos" asp-action="Index">Histórico de empréstimos</a>
+</div>

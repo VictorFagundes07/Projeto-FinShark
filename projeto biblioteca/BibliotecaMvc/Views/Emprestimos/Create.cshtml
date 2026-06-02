@@ -1,0 +1,36 @@
+@model Emprestimo
+@{
+    ViewData["Title"] = "Registrar empréstimo";
+}
+
+<section class="page-title"><h1>Registrar empréstimo</h1></section>
+<form method="post" class="form-card">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="row g-3">
+        <div class="col-md-6">
+            <label asp-for="UsuarioId" class="form-label"></label>
+            <select asp-for="UsuarioId" asp-items="ViewBag.UsuarioId" class="form-select"><option value="">Selecione</option></select>
+            <span asp-validation-for="UsuarioId" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label asp-for="LivroId" class="form-label"></label>
+            <select asp-for="LivroId" asp-items="ViewBag.LivroId" class="form-select"><option value="">Selecione</option></select>
+            <span asp-validation-for="LivroId" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label asp-for="DataEmprestimo" class="form-label"></label>
+            <input asp-for="DataEmprestimo" type="date" class="form-control" />
+            <span asp-validation-for="DataEmprestimo" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label asp-for="DataPrevistaDevolucao" class="form-label"></label>
+            <input asp-for="DataPrevistaDevolucao" type="date" class="form-control" />
+            <span asp-validation-for="DataPrevistaDevolucao" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="mt-4"><button class="btn btn-primary">Registrar</button> <a class="btn btn-secondary" asp-action="Index">Voltar</a></div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

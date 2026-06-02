@@ -1,0 +1,20 @@
+@model Emprestimo
+@{
+    ViewData["Title"] = "Registrar devolução";
+}
+
+<section class="page-title"><h1>Registrar devolução</h1></section>
+<div class="form-card">
+    <dl class="row">
+        <dt class="col-sm-3">Usuário</dt><dd class="col-sm-9">@Model.Usuario?.NomeCompleto</dd>
+        <dt class="col-sm-3">Livro</dt><dd class="col-sm-9">@Model.Livro?.Nome</dd>
+        <dt class="col-sm-3">Prevista</dt><dd class="col-sm-9">@Model.DataPrevistaDevolucao.ToString("dd/MM/yyyy")</dd>
+        <dt class="col-sm-3">Atraso hoje</dt><dd class="col-sm-9">@Model.DiasAtraso(DateTime.Today) dia(s)</dd>
+        <dt class="col-sm-3">Multa prevista</dt><dd class="col-sm-9">@((Model.DiasAtraso(DateTime.Today) * 2m).ToString("C"))</dd>
+    </dl>
+    <form asp-action="ConfirmarDevolucao" method="post">
+        <input type="hidden" name="id" value="@Model.Id" />
+        <button class="btn btn-warning">Confirmar devolução</button>
+        <a class="btn btn-secondary" asp-action="Index">Cancelar</a>
+    </form>
+</div>
