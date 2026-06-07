@@ -7,7 +7,7 @@ import Spinner from "../Spinner/Spinner";
 import {
   formatLargeMonetaryNumber,
   formatRatio,
-} from "../../Helpers/NumberFormating";
+} from "../../Helpers/NumberFormattin";
 
 type Props = {};
 
@@ -87,7 +87,7 @@ const IncomeStatement = (props: Props) => {
       setIncomeStatement(result!.data);
     };
     getRatios();
-  }, []);
+  }, [ticker]);
   return (
     <>
       {incomeStatement ? (

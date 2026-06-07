@@ -4,7 +4,7 @@ import { CompanyCashFlow } from "../../company";
 import { getCashFlow } from "../../api";
 import Table from "../Table/Table";
 import Spinner from "../Spinner/Spinner";
-import { formatLargeMonetaryNumber } from "../../Helpers/NumberFormating";
+import { formatLargeMonetaryNumber } from "../../Helpers/NumberFormattin";
 
 type Props = {};
 
@@ -61,7 +61,7 @@ const CashflowStatement = (props: Props) => {
       setCashFlowData(result!.data);
     };
     getRatios();
-  }, []);
+  }, [ticker]);
   return cashFlowData ? (
     <Table config={config} data={cashFlowData}></Table>
   ) : (

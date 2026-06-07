@@ -7,7 +7,8 @@ import Spinner from "../Spinner/Spinner";
 import {
   formatLargeNonMonetaryNumber,
   formatRatio,
-} from "../../Helpers/NumberFormating";
+} from "../../Helpers/NumberFormattin";
+import StockComment from "../StockComment/StockComment";
 
 type Props = {};
 
@@ -89,12 +90,13 @@ const CompanyProfile = (props: Props) => {
       setCompanyData(value?.data[0]);
     };
     getCompanyKeyRatios();
-  }, []);
+  }, [ticker]);
   return (
     <>
       {companyData ? (
         <>
           <RatioList config={tableConfig} data={companyData} />
+          <StockComment stockSymbol={ticker} />
         </>
       ) : (
         <Spinner />
